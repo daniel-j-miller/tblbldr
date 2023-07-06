@@ -1,14 +1,21 @@
 Package: tblbldr
 Type: Package
-Title: Import CSV Files Produced By TableBuilder.
+Title: Import CSV Files Produced By TableBuilder
 Version: 0.1.0
 Author: Dan Miller
 Maintainer: Dan Miller <daniel.miller@anu.edu.au>
 Description: contains one function that will read 'csv string' format tables 
     from TableBuilder and Health Workforce data tool, detects and skips 
-    proceeding and trailing metadata
-License: MIT
+    proceeding and trailing metadata.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/daniel-j-miller/tblbldr
 BugReports: https://github.com/daniel-j-miller/tblbldr/issues
+Imports:
+    data.table,
+    dplyr,
+    readr,
+    stringr
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
