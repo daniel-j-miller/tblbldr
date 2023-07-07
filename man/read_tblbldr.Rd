@@ -3,7 +3,7 @@
 \name{read_tblbldr}
 \alias{read_tblbldr}
 \title{read_tblbldr
-Import CVS from TableBuilder}
+Import CSV from TableBuilder}
 \usage{
 read_tblbldr(path)
 }
@@ -15,5 +15,5 @@ a dataframe
 }
 \description{
 read_tblbldr
-Import CVS from TableBuilder
+Import CSV from TableBuilder
 }

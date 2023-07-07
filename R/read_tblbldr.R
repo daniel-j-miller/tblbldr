@@ -1,5 +1,5 @@
 #' read_tblbldr
-#' Import CVS from TableBuilder
+#' Import CSV from TableBuilder
 #' @param path path to the CSV to be imported
 #'
 #' @return a dataframe
@@ -8,9 +8,7 @@
 #' @importFrom data.table :=
 #' @importFrom data.table setDT
 #' @importFrom readr read_delim
-#' @importFrom readr read_csv
-#' @importFrom stringr str_count
-#' @examples read_tblbldr(path = "path\to\some\file.csv"
+#' @examples read_tblbldr(path = "path/to/some/file.csv")
 read_tblbldr <- function(path){
 
   df <- readr::read_delim(path,
@@ -27,12 +25,8 @@ read_tblbldr <- function(path){
   names(df) <- "x"
   df2 <- df[-1,]
 
-  setDT(df2)[, gsub(pattern = " ", replacement = ".", strsplit(df$x, ",")[[1]]) := tstrsplit(df2$x, ",", type.convert = TRUE)]
+  data.table::setDT(df2)[, gsub(pattern = " ", replacement = ".", strsplit(df$x, ",")[[1]]) := tstrsplit(df2$x, ",", type.convert = TRUE)]
   df2 <- df2[,-1]
   df2
 }
-
-
-
-
 
